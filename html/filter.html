@@ -1,0 +1,154 @@
+<Style>
+    .filter_return_values {
+        color: #712D90;
+    }
+
+    .autocomplete {
+        position: relative;
+        display: inline-block;
+    }
+
+    .autocomplete input {
+        border: 1px solid transparent;
+        background-color: #ffffff;
+        padding: 2px;
+    }
+
+    .autocomplete input[type=text] {
+        font-size: 12px;
+        border: 1px solid black;
+        width: 100%;
+        height: 14px;
+        border-radius: 1px;
+    }
+
+
+    
+
+    .autocomplete-items {
+        height: 275px;
+        overflow: auto;
+        border: 1px solid white;
+        border-bottom: none;
+        border-top: none;
+        z-index: 999;
+        top: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    .autocomplete-items div {
+        padding: 5px;
+        cursor: pointer;
+        background-color: #fff;
+        border-bottom: 1px solid #d4d4d4;
+    }
+
+    .autocomplete-items div:hover {
+        background-color: #fae9ba;
+    }
+
+    /*when navigating through the items using the arrow keys:*/
+    .autocomplete-active {
+        background-color: DodgerBlue !important;
+        color: #ffffff;
+    }
+</style>
+
+<div>
+    <div style="font-size: 16px; display:flex; flex-direction:row; justify-content: center ; padding: 0px;">
+        DISPLAYING &nbsp <div class='filter_return_values' id="f_cnt"></div> &nbsp OUT OF &nbsp<div
+            class='filter_return_values' id="t_cnt"></div>
+    </div>
+    <div style="display:flex; flex-direction:row; justify-content: space-around; padding: 10px 5px;">
+        <div>
+            <div class="popUpGrid" style="padding: 2px 10px;" onclick="reset_filter()">RESET FILTERS</div>
+        </div>
+        <div>
+            <div class="popUpGrid" style="padding: 2px 10px;" onclick="center_map()">CENTER MAP</div>
+        </div>
+    </div>
+</div>
+<button class="accordion">Filter Building Name or Address</button>
+<div class="panel" id="autocompletepanel">
+    <div class="autocomplete" style="padding: 3px" style="width:300px;">
+        <label for="fname">Property Name:</label><br>
+        <input type="text" id="fname" name="fname" autocomplete="off" placeholder="Building Name">
+    </div>
+    <div class="autocomplete" style="padding: 0px 15px 10px 5px;">
+        <label for="faddr">Property Address:</label><br>
+        <input type="text" id="faddr" name="faddr" autocomplete="off" placeholder="Building Address">
+    </div>
+</div>
+
+<button class="accordion">Energy Use and Gas Emissions</button>
+<div class="panel">
+    <div style="padding: 3px">Compliance Status</div>
+    <div class="check-boxes" style="display:flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around;">
+        <div><input type="checkbox" name="CompianceStatus" class="CompianceStatus" value="Exempt" checked="true">Exempt
+        </div>
+        <div><input type="checkbox" name="CompianceStatus" class="CompianceStatus" value="Not Participating"
+                checked="true">Not Participating</div>
+        <div><input type="checkbox" name="CompianceStatus" class="CompianceStatus" value="Participating"
+                checked="true">Participating</div>
+        <div><input type="checkbox" name="CompianceStatus" class="CompianceStatus" value="Pending final review"
+                checked="true">Pending Final Review</div>
+        <div><input type="checkbox" name="CompianceStatus" class="CompianceStatus" value="Voluntarily Complying"
+                checked="true">Voluntarily Complying</div>
+    </div>
+
+    <div style="padding: 3px">Energy Star</div>
+    <div class="range-slider">
+        <span>
+            Min: <input type="number" step="1">
+            Max: <input type="number" step="1">
+        </span>
+        <input step="1" type="range">
+        <input step="1" type="range">
+    </div>
+    <div style="padding:10px 5px 5px 5px ">Site Energy Use Intensity (ft²)</div>
+    <div class="range-slider">
+        <span>
+            Min: <input type="number" step=".1" style="width: 49px;">
+            Max: <input type="number" step=".1" style="width: 49px;">
+        </span>
+        <input step=".1" type="range">
+        <input step=".1" type="range">
+    </div>
+    <div style="padding:10px 5px 5px 5px">Total Annual Greenhouse Gas Emissions</div>
+    <div class="range-slider">
+        <span>
+            Min: <input type="number" step=".1" style="width: 51px;">
+            Max: <input type="number" step=".1" style="width: 51px;">
+        </span>
+        <input step=".1" type="range">
+        <input step=".1" type="range">
+    </div>
+    <div style="padding: 3px">&nbsp</div>
+</div>
+<button class="accordion">Building Size Use and Year</button>
+<div class="panel">
+    <p> Property Use <input type="checkbox" id="selectAllCat" checked="true" onclick="selectAllCat(this)"> Select All
+    </p>
+    <div class="check-boxes" id="primary_use">
+    </div>
+    <div style="padding:10px 5px 5px 5px">Building Size (ft²)</div>
+    <div class="range-slider">
+        <span>
+            Min: <input type="number" step="1" style="width: 49px;">
+            Max: <input type="number" step="1" style="width: 49px;">
+        </span>
+        <input step="1" type="range">
+        <input step="1" type="range">
+    </div>
+    <div style="padding:10px 5px 5px 5px ">Year Built</div>
+    <div class="range-slider">
+        <span>
+            Min: <input type="number" step="1">
+            Max: <input type="number" step="1">
+        </span>
+        <input step="1" type="range">
+        <input step="1" type="range">
+    </div>
+    <div style="padding: 0px">&nbsp</div>
+    <iframe onload="initFilters() , accordion(), initNameAddr() " src="" frameborder="0"></iframe>

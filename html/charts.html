@@ -1,0 +1,91 @@
+<style>
+    .small {
+        font: 2.5px Texta-Regular;
+        fill: rgb(10, 10, 10);
+    }
+    .header {
+        font: 2.5px Texta-Black;
+        fill: #8BC53F;
+    }
+
+    rect {
+        stroke-width: .3;
+        stroke: #8BC53F;
+        fill: #FBB92F;
+        fill-opacity: .2;
+    }
+
+    line {
+        stroke-width: .05;
+    }
+
+    #chartTotalWrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap:wrap;
+        justify-content: space-evenly;
+        font-family: Texta-Regular, Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        
+        border: 0px solid black;
+        padding: 10px 10px 10px 10px;
+    }
+
+    #complianceChartDiv {
+        border: 0px solid green;
+    }
+
+    .totalBoxes {
+        display: flex;
+        flex-direction: column ;
+        text-align: center;
+        width: 100px;
+        border: 1px solid #fbba2f;
+        border-radius: 15px;
+        padding: 10px
+    }
+
+    #catCnt {
+        border: 0px solid green;
+        height: auto;
+        width: 100%;
+        padding: 15px 50px 15px 50px;
+     }
+
+    #complianceChartDiv {
+        height: auto;
+        width: 90%;
+        padding: 15px 50px 15px 50px;
+    }
+    #complianceChartDiv{
+    display: flex;
+    justify-content: center;
+    width:100%;
+    }
+    .info_n{
+        font-weight: bold;
+        font-size: 20px;
+        color: #712D90;
+    }
+</style>
+
+
+<div id="chartTotalWrapper">
+    <div id="tGE" class="totalBoxes">Total Greenhouse Emission
+        <div id='tGE_v' class = "info_n"></div>
+    </div>
+    <div id="tEC" class="totalBoxes">Total Energy Consumption
+        <div id='tEC_v'class = "info_n"></div>
+    </div>
+    <div id="tGFAC" class="totalBoxes">Total Gross Floors Areas Covered (ft²)
+        <div id='tGFAC_v' class = "info_n"></div>
+    </div>
+    <div id="tBR" class="totalBoxes">Total Building Reported
+        <div id='tBR_v' class = "info_n"></div>
+    </div>
+</div>
+
+<div id="complianceChartDiv"></div>
+<div style="width:100%" id="catCnt"></div>
+
+<iframe onload="showCharts() " src="" frameborder="0" height="0" width="0">loading</iframe>

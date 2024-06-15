@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<! --
+ Orlando Building Energy Dashboard App
+ Created by Mike Hodges on 12/20/21.
+ V 1.005
+--> 
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <!-- leaflet imports -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js" type="text/javascript"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="css/buildingenergydashboard.css">
+    <script src="javaScript/filter.js"></script>
+    <script src="javaScript/map.js"></script>
+    <script src="javaScript/chart.js"></script>
+    <script src="javaScript/grid.js"></script>
+    <script src="javaScript/compare.js"></script>
+    <script src="javaScript/topperformers.js"></script>
+
+    <title>ORLANDO BUILDING ENERGY</title>
+</head>
+
+<body>
+    <div class="header_wraper">
+        <div style="flex: 2" class="header">
+            <div style="display:flex; flex-flow:row ">
+                <div id="header_green_works_orlando">
+                    GREEN WORKS ORLANDO
+                </div>
+            </div>
+            <div id="header_bewes">
+                BUILDING ENERGY BENCHMARKING
+            </div>
+        </div>
+        <div style="flex: 1" class="s_medea_wrapper">
+            
+            <a href="https://www.facebook.com/cityoforlando" target="_blank">
+                <div class="s_medea"><img src="images/facebook.svg" alt="Facebook"></div>
+            </a>
+            <a href="https://twitter.com/citybeautiful" target="_blank">
+                <div class="s_medea"><img src="images/twitter.svg" alt="Twitter"></div>
+            </a>
+            <a href="https://www.youtube.com/user/CityofOrlando" target="_blank">
+                <div class="s_medea"><img src="images/youtube.svg" alt="YouTube"></div>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="nav">
+        <button onclick="gotoPage('chart_html_div')" class="nav-button nav-button-text">
+            <img src="images/nav-chart.svg" class="imgSvg" alt="CHARTS">
+            <div style="padding-left: 5px;">CHARTS</div>
+        </button>
+        <button onclick="gotoPage('map_html_div')" class="nav-button nav-button-text">
+            <img src="images/nav-map.svg" class="imgSvg" alt="MAP">
+            <div style="padding-left: 5px;">MAP</div>
+        </button>
+        <button onclick="gotoPage('grid_html_div')" class="nav-button nav-button-text">
+            <img src="images/nav-grid.svg" class="imgSvg" alt="GRID">
+            <div style="padding-left: 5px;">GRID</div>
+        </button>
+        <button onclick="gotoPage('compare_html_div')" class="nav-button nav-button-text">
+            <img src="images/nav-compare.svg" class="imgSvg" alt="COMPARE">
+            <div id="compare_btn" style="padding-left: 5px;">COMPARE (0)</div>
+        </button>
+        <button onclick="gotoPage('top_performers_html_div')" class="nav-button nav-button-text">
+            <img src="images/nav-top-prefomers.svg" class="imgSvg" alt="TOP PERFORMERS">
+            <div style="padding-left: 5px;">TOP PERFORMERS</div>
+        </button>
+    </div>
+
+    <div class="main">
+        <div id="filter_html_div">
+            loading filters
+        </div>
+        <div class="pages" id="chart_html_div">
+            loading charts
+        </div>
+        <div class="pages" id="map_html_div">
+            loading map
+        </div>
+        <div class="pages" id="grid_html_div">
+            loading grid
+        </div>
+        <div class="pages" id="compare_html_div">
+            loading compare
+        </div>
+        <div class="pages" id="top_performers_html_div">
+            loading top performers
+        </div>
+        <script src="javaScript/buildingenergydashboard.js"></script>
+    </div>
+
+    <footer>
+        <div style="display:flex; flex-flow:row; justify-content:space-between; flex-wrap: wrap;">
+            <div>
+                <img src="images/GreenWorksOrlando75.png" alt="" style=" width: 210px; height: auto;">
+            </div>
+            <div style="padding-top: 10px;"><img src="images/GreenworksIcons_Highlighted_EnergyAndGreenBuildings68.png"
+                    alt="" style=" width: 210px; height: auto;">
+            </div>
+            
+            <div style="align-self: flex-end; margin-left: auto; text-align: end; padding: 10px 0px 15px 0px;">
+                <div>GREEN WORKS ORLANDO</div>
+                <div style="display:flex; flex-flow:row wrap; justify-content:flex-end;">
+                    <div>400 South Orange Avenue</div>
+                    <div style="padding-left: 5px;">Orlando, Florida 32801</div>
+                </div>
+                <div style="display:flex; flex-flow:row wrap;  justify-content: flex-end; ">
+                    <div>407.246.2121</div>
+                    <div style="padding-left: 5px;">
+                        orlando.gov/Initiatives/Building-Energy-Water-Efficiency-Strategy</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
