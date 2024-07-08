@@ -576,6 +576,13 @@
 
 
 
+        @media (max-width: 800px) {
+            #header_bewes{
+                font-size: 12px;
+            }
+        }
+
+
 @media all and (max-width: 650px) {
     #filter_html_div {
         min-width: 90vw;
