@@ -145,6 +145,18 @@ accordion = () => {
         });
     }
 }
+init_Accordion = () => {
+    console.log("Building Energy Dashboard App Loaded");
+    var acc = document.getElementsByClassName("accordion")[1].nextElementSibling;
+    if( window.innerHeight > 800)  { 
+        acc.style.maxHeight = acc.scrollHeight + "px";
+    } 
+    
+    console.log(acc);
+}   
+      
+
+
 
 
 /**
@@ -196,3 +208,9 @@ const moreInfo = (p_id) => {
     window.open(link, '_blank');
     console.log("more info => ", p_id);
 }
+
+
+
+
+
+   
